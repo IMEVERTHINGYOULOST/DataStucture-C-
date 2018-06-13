@@ -1,0 +1,37 @@
+unordered_set
+1.c++11
+2.to store unique element；remove redundant data from souce data;
+e.g. replace a-z with morse code
+      int uniqueMorseRepresentations(vector<string>& words) {
+          vector<string> rep = {".-","-...","-.-.","-..",".","..-.","--.","....",
+          "..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-",
+          "..-","...-",".--","-..-","-.--","--.."};
+          unordered_set<string> s;
+          for (auto word:words) {
+              string code;
+              for (auto c:word) {
+                 code += rep[c-'a'];
+              }
+             s.insert(code);
+           }
+          return s.size();
+     }
+     
+3.set
+3.1.unordered_set(unordered_map) base on hash table,unordered/set(map) ordered base on RB-tree,ordered
+3.2.unordered_set is faster than set when seacrhing
+
+4.unordered_map
+4.1.both are base on hash table;运用了散列的存储方式
+4.2.part of Libray C++Boost 
+map存储pair,ser存储单个
+
+5.unordered_multiset
+multiset允许元素重复，set不允许元素重复
+
+疑问：
+1.multiset和map的区别？
+单个元素，多个元素
+2.unordered_set和set的区别
+当元素较少、hash bucket很多的时候，负载因子很小，发生冲突的概率很小，这样保证了unordered_set的查找效率,因此，在负
+载因子大于某个常数（1或者0.75）就需要对哈希表进行扩容
