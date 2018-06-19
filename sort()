@@ -1,0 +1,31 @@
+
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+int main(){
+    cout<<"please input sort int numbers(any none int type will end input)"<<endl;
+    vector<int> expnums;
+    int num;
+    while (cin>>num) {
+        expnums.push_back(num);
+    }
+    cout<<"expnums.size() is "<<expnums.size()<<endl;
+    sort(expnums.begin(),expnums.end(),greater<int>());
+    cout<<"the min num is "<<expnums[expnums.size()-1]<<endl;
+    return 0;
+}
+greater<int>()为由大到小排序
+
+
+bool compareInterval(Interval i1, Interval i2) {
+    return (i1.start < i2.start);
+}
+Interval arr[] =  { {6,8}, {1,9}, {2,4}, {4,7} };
+int n = sizeof(arr)/sizeof(arr[0]);
+// sort the intervals in increasing order of
+// start time
+sort(arr, arr+n, compareInterval);
