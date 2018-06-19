@@ -1,21 +1,17 @@
 输入一堆数字，并输出这些数字中最小的
-#include<algorithm>
-
-int main(){
-    cout<<"please input sort int numbers(any none int type will end input)"<<endl;
-    vector<int> expnums;
-    int num;
-    while (cin>>num) {
-        expnums.push_back(num);
-    }
-    cout<<"expnums.size() is "<<expnums.size()<<endl;
-    sort(expnums.begin(),expnums.end(),greater<int>());
-    cout<<"the min num is "<<expnums[expnums.size()-1]<<endl;
-    return 0;
+cout<<"please input sort int numbers(any none int type will end input)"<<endl;
+vector<int> expnums;
+int num;
+while (cin>>num) {
+    expnums.push_back(num);
 }
-greater<int>()为由大到小排序
+cout<<"expnums.size() is "<<expnums.size()<<endl;
+sort(expnums.begin(),expnums.end(),greater<int>());//greater<int>()为由大到小排序
+cout<<"the min num is "<<expnums[expnums.size()-1]<<endl;
 
 
+
+others:
 bool compareInterval(Interval i1, Interval i2) {
     return (i1.start < i2.start);
 }
