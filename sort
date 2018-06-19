@@ -1,10 +1,5 @@
-
-
-#include <iostream>
-#include <string>
-#include <vector>
+输入一堆数字，并输出这些数字中最小的
 #include<algorithm>
-using namespace std;
 
 int main(){
     cout<<"please input sort int numbers(any none int type will end input)"<<endl;
